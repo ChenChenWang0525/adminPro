@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .trang {
+            width: 0;
+            height: 0;
+            border-bottom: 10px solid #333;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+        }
+
+        .triangle {
+            position: relative;
+            width: 100px;
+            height: 100px;
+        }
+
+        .triangle::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 100px solid #10db76;
+        }
+
+        .fa {
+
+            width: 500px;
+            height: 500px;
+
+
+        }
+
+        .son1 {
+            margin-bottom: 30px;
+            background-color: #333;
+        }
+
+        .son2 {
+            margin-top: 20px;
+            background-color: aqua;
+        }
+
+        .parent {
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+
+        }
+
+        .child {
+
+            width: 100px;
+            height: 100px;
+            background-color: #10db76;
+            transform: rotate(9deg);
+            -ms-transform: rotate(9deg);
+            /* Internet Explorer */
+            -moz-transform: rotate(9deg);
+            /* Firefox */
+            -webkit-transform: rotate(9deg);
+            /* Safari 和 Chrome */
+            -o-transform: rotate(9deg);
+            /* Opera */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>你好</h1>
+
+    <div class="triangle">
+
+    </div>
+    <div class="fa">
+        <div class="son1">1111</div>
+        <div class="son2">2222</div>
+    </div>
+    <div class="parent">
+        55555
+        <div class="child">66666</div>
+    </div>
+
+
+
+    <script>
+
+
+        setTimeout(function () {
+            console.log('three');
+        }, 0);
+        Promise.resolve("111").then(function () {
+            console.log('two');
+        });
+        console.log('one');
+        // one
+        // two
+        // three
+        const arr = [1, 2, 3]
+
+        for (const i of arr) {
+            console.log(i);
+        }
+        arr.forEach((value, index) => {
+            console.log(`当前元素是${index}==${value}`)
+        })
+        function Person(name) {
+            this.name = name
+        }
+        const tom = new Person("晨晨")
+        console.log(typeof 123)
+        console.log(typeof "abc")
+        console.log(typeof function () { })
+        console.log(typeof null)
+        console.log(typeof Person)
+        console.log(tom instanceof Array)
+        //Number String boolean null undifined bigint Symbol 基本
+        // function Array  Date map set 正则 regexp 引用
+        const obj = { a: 1, b: 2, c: 3 };
+
+        for (const key in obj) {
+            console.log(key);   // 输出：a, b, c
+            console.log(obj[key]);  // 输出：1, 2, 3
+        }
+        Array.prototype.myForEach = function(callback) {
+  for (var i = 0; i < this.length; i++) {
+    callback(this[i], i, this);
+  }
+};
+
+// 示例用法
+var numbers = [1, 2, 3, 4, 5];
+numbers.myForEach(function(number, index, array) {
+  console.log("Number: " + number + ", Index: " + index + ", Array: " + array);
+});
+
+    </script>
+</body>
+
+</html>
